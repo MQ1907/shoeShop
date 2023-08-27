@@ -14,17 +14,24 @@ export default function ShoeShop() {
      })
      setProductDetail(...newProductDetail)
 
+    }
+
     
-    
-  }
-  return (
+
+
+    const handleCloseModal = ()=>{
+      console.log("Hàm đã chạy")
+     setOpenModal(false)
+    }
+   
+    return (
     <div className='container'>
         <h1 className='text-center text-primary'>Shoe Shop</h1>
 
         
 
-        <ShoeList products={data} onViewDetail={handleViewDetail}/>
-        {isOpenModal && <ShoeDetail  product={productDetail} /> }
+        <ShoeList products={data} onViewDetail={handleViewDetail} />
+        {isOpenModal && <ShoeDetail  product={productDetail} onCloseModal={handleCloseModal} /> }
     </div>
   )
 }
